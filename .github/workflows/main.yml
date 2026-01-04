@@ -22,6 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v6
+        with:
+          submodules: 'recursive'
       
       - name: Setup Go environment
         uses: actions/setup-go@v6
