@@ -17,7 +17,7 @@ build_client() {
     EXT=""
     [[ $GOOS = "windows" ]] && EXT=".exe"
     echo "Building ${GOOS} ${GOARCH} ${GOARM}"
-    CGO_ENABLED=0 go build \
+    CGO_ENABLED=1 go build \
         -trimpath \
         -ldflags="-s -w" \
         -o ../bin/vpn-client-${GOOS}-${GOARCH}-${GOARM}${EXT} .
@@ -29,7 +29,7 @@ build_server() {
     EXT=""
     [[ $GOOS = "windows" ]] && EXT=".exe"
     echo "Building ${GOOS} ${GOARCH} ${GOARM}"
-    CGO_ENABLED=0 go build \
+    CGO_ENABLED=1 go build \
         -trimpath \
         -ldflags="-s -w" \
         -o ../bin/vpn-server-${GOOS}-${GOARCH}-${GOARM}${EXT} .
