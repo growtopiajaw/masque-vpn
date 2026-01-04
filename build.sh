@@ -20,7 +20,7 @@ build_client() {
     CGO_ENABLED=0 go build \
         -trimpath \
         -ldflags="-s -w" \
-        -o ./bin/vpn-client-${GOOS}-${GOARCH}-${GOARM}${EXT} .
+        -o ../bin/vpn-client-${GOOS}-${GOARCH}-${GOARM}${EXT} .
     popd
 }
 
@@ -32,7 +32,7 @@ build_server() {
     CGO_ENABLED=0 go build \
         -trimpath \
         -ldflags="-s -w" \
-        -o ./bin/vpn-server-${GOOS}-${GOARCH}-${GOARM}${EXT} .
+        -o ../bin/vpn-server-${GOOS}-${GOARCH}-${GOARM}${EXT} .
     popd
 }
 ### multi arch binary build
